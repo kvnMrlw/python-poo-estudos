@@ -10,35 +10,36 @@ class Caneta:
                 escolha = "[red]"
             case "verde":
                 escolha = "[green]"
-            case _:
+            case _ :
                 escolha = "[white]"
         self.cor = escolha
         self.tampada = True
 
     
-    def destampar(self):
-        if self.tampada:
+    def destampar_caneta(self):
+        if self.tampada == True:
             self.tampada = False
-
-
-
+        
+    
     def escrever(self, msg):
-        if self.tampada:
-            print(f":prohibited: A {self.cor} caneta[/] esta tampada")
+        if self.tampada == True:
+            print (f":lock: A caneta esta tampada")
         else:
-            print(f"{self.cor}{msg}[/]", end="")
+            print (f"{self.cor}{msg}")
 
-
-    def quebra_linha(self, quant= 1):
-        for _ in range(0, quant):
+    def pular_linha(self, quant):
+        for _ in range (0, quant):
             print("\n")
 
 
-g1= Caneta("azul")
-g2= Caneta("vermelho")
-g1.destampar()
-g2.destampar()
+   
 
-g1.escrever("oi")
-g1.quebra_linha(2)
-g2.escrever("fala ai")
+
+v = Caneta("verde")
+v.destampar_caneta()
+v.escrever("olá")
+v.pular_linha(3)
+
+a = Caneta("")
+a.destampar_caneta()
+a.escrever("olá nada zé")
