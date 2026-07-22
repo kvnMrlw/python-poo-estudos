@@ -75,7 +75,7 @@ class ControleRemoto:
 tv = ControleRemoto()
 while True:
     tv.mostrar_tv()
-    comando = str(input(f" < CH{tv.canal_atual} >   - VOL{tv.volume_atual} + "))
+    comando = str(input(f" < CH{tv.canal_atual} >   - VOL{tv.volume_atual } + "))
     match comando:
         case "sair":
             print ("\n volte sempre!")
