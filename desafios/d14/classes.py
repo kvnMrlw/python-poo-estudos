@@ -19,18 +19,15 @@ class Diario:
 
     @property
     def senha(self):
-        if not self.__senha:
-            raise PermissionError("Você não pode ler o diario")
+        return self.__senha
 
-
-    @senha.setter
-    def trocar_senha(self, senha_atual):
+    def trocar_senha(self, senha_atual, nova_senha):
         if senha_atual == self.__senha:
-            nova_senha = input("digite sua nova senha")
-        self.__senha = nova_senha
+            self.__senha = nova_senha
+        else:
+            raise PermissionError("Essa não é a senha atual")
 
 
-    
 
 
         
