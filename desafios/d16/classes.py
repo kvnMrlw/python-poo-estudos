@@ -12,14 +12,15 @@ class ContaBancaria:
 
     @property
     def nome (self):
-        return self._titular
+        return  f"Agora seu novo nome é [green]{self._titular}[/]"
 
 
     @nome.setter
     def nome (self, novo_nome):
-            self.pede_senha()
-            if self.validar_senha(self.pede_senha()) == True:
+            senha = self.pede_senha()
+            if self.validar_senha(senha) == True:
                 self._titular = novo_nome
+    
         
 
     def validar_senha(self, chave):
@@ -47,13 +48,14 @@ class ContaBancaria:
         valor = abs(valor)
 
         if chave is None:
-            self.pede_senha(chave)
+            chave = self.pede_senha()
 
         if self.validar_senha(chave):
             if valor > self.__saldo:
                 return f"Saldo insuficiente"
             else:
                 self.__saldo -= valor
+                return f"O saque de R${valor} foi aceito! Agora você possui R${self.__saldo} na conta"
         
 
 
@@ -63,4 +65,4 @@ class ContaBancaria:
             self.__saldo +=  valor
         else:
             return f"O deposito de {valor} é invalido!"
-        return f"deposito de {valor}"
+        return f"deposito de {valor} agora sua conta tem {self.__saldo}"
