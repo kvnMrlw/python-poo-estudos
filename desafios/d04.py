@@ -15,18 +15,19 @@ class Livro:
         if self.pag_atual == 1:
             for i in range(1, pag+1):
                 self.pag_atual += 1
-                print(f"[red] pag{i} [/red]>", end="")
+                print(f"[red] pag{i} [/]", end=">")
                 if i == self.num_pag:
-                    print(" O livro acabou!")
+                    print("\n[pink] O livro acabou [/]")
                     break
+
         else:
             destino = self.pag_atual + pag
             for i in range(self.pag_atual, destino):
-                print(f"[red] pag{i} [/red]>", end="")
                 self.pag_atual += 1
+                print(f"[red] pag{i} [/]", end=">")
                 if i == self.num_pag:
-                    print(" O livro acabou!")
-            
+                    print("\n[pink] O livro acabou [/]")
+
 
 l = Livro("o rei", 12)
 l.passar_pagina(5)
