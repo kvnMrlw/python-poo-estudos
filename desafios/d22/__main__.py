@@ -1,7 +1,7 @@
 from classes import *
 
 def main():
-    pass
+    Alerta("Olá!").mostrar()
 
 
 if __name__ == "__main__":
